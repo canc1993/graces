@@ -59,7 +59,7 @@ def main(name, n_features, n_iters, n_repeats):
 
 
 if __name__ == "__main__":
-    name = 'ALLAML'
+    name = 'Prostate_GE'
     max_features = 10
     n_iters = 20
     n_repeats = 3
