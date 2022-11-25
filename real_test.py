@@ -59,8 +59,8 @@ def main(name, n_features, n_iters, n_repeats):
 
 
 if __name__ == "__main__":
-    name = 'GLI_85'
-    max_features = 1
+    name = 'ALLAML'
+    max_features = 10
     n_iters = 20
     n_repeats = 3
     results = np.zeros((max_features, n_iters))
