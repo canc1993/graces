@@ -42,7 +42,7 @@ def main(name, n_features, n_iters, n_repeats):
                     clf_g.fit(x_train_red_g, y_train)
                     y_val_pred = clf_g.predict_proba(x_val_red)
                     auc_grid[i, j] += roc_auc_score(y_val, y_val_pred[:, 1])
-                    loss_grid += -np.sum(y_val * np.log(y_val_pred[:, 1]))
+                    loss_grid[i, j] += -np.sum(y_val * np.log(y_val_pred[:, 1]))
         index_i, index_j = np.where(auc_grid == np.max(auc_grid))
         best_index = np.argmin(loss_grid[index_i, index_j]) # break tie based on cross-entropy loss
         best_prob, best_f_correct = dropout_prob[int(index_i[best_index])], f_correct[int(index_j[best_index])]
